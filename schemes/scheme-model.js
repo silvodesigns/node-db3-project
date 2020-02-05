@@ -22,9 +22,14 @@ function add(toBeAdded) {
     return db('schemes').insert(toBeAdded);
 }
 
+function update(changes, id){
+    return db('schemes').where({id}).update(changes);
+}
+
 module.exports = {
     find,
     findById,
     findSteps,
-    add
+    add,
+    update
 }
